@@ -53,7 +53,18 @@ const struct chainparams networks[] = {
      .cli_args = "-testnet",
      .dust_limit = 100000,
      .when_lightning_became_cool = 1,
-     .testnet = true}
+     .testnet = true},
+    {.index = 5,
+     .network_name = "bitcoin private",
+     .bip173_name = "btcp",
+     .genesis_blockhash = {{{.u.u8 = { 0xd6, 0xbd, 0x9e, 0xfb, 0x40, 0xc4, 0x50, 0xbc, 0xb3, 0x75, 0x40, 0xcf, 0xd1, 0xa7, 0xb8, 0xa4, 0x0e, 0x17, 0xb3, 0x45, 0x7c, 0xbd, 0x1e, 0x22, 0xc9, 0x49, 0x31, 0x35, 0xe1, 0xa4, 0x02, 0x01 }}}},
+     .rpc_port = 7932,
+     .cli = "btcp-cli",
+     .cli_args = NULL,
+     .dust_limit = 100,
+     .when_lightning_became_cool = 1,
+     .testnet = false}
+	 
 };
 
 const struct chainparams *chainparams_for_network(const char *network_name)
